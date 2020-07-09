@@ -1,21 +1,21 @@
 {
   "name": "weather_app",
   "version": "1.0.0",
-  "description": "This is a simple Weather App",
-  "main": "index.js",
+  "description": "A simple weather app",
+  "main": "app.js",
   "scripts": {
-    "deploy": "gh-pages -d dist "
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Abhicancode/Weather-App.git"
   },
-  "author": "Abhishek Ojha",
+  "author": "Abhishek ojha",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Abhicancode/Weather-App/issues"
   },
-  "homepage": "https://Abhicancode.github.io/weather_app",
+  "homepage": "https://github.com/Abhicancode/Weather-App",
   "dependencies": {
     "gh-pages": "^3.1.0"
   }
