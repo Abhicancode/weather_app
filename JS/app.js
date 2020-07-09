@@ -42,10 +42,12 @@ window.addEventListener("load", () => {
               temperatureDetails.textContent = `Oh God it feels like ${Math.floor(
                 feelsLikeFahrenheit
               )}`;
+              temperatureMain.style.transform = "translateX(-10%)";
             } else {
               temperatureSpan.textContent = "C";
               temperatureDegree.textContent = temperature;
               temperatureDetails.textContent = `Oh God it feels like ${feelslike}`;
+              temperatureMain.style.transform = "translateX(10%)";
             }
           });
         });

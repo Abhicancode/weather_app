@@ -18,6 +18,14 @@ body {
   align-items: center;
   background: linear-gradient(120deg, rgb(14, 5, 5), rgb(84, 144, 184));
 }
+h1 {
+  font-size: 50px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: var(--secondary-color);
+  letter-spacing: 3px;
+  border: 3px solid white;
+  padding: 10px;
+}
 .location,
 .temperature {
   height: 30vh;
@@ -28,7 +36,9 @@ body {
 }
 .temperature {
   flex-direction: column;
+  transition: 0.5s ease-out;
 }
+
 .degree-section {
   display: flex;
   align-items: center;
@@ -40,6 +50,40 @@ body {
   font-weight: bold;
 }
 .degree-section h2 {
-  font-size: 40px;
+  font-size: 90px;
   color: var(--secondary-color);
+}
+.location .Cloud {
+  margin-left: 70px;
+  padding: 20px;
+  border: 3px solid var(--secondary-color);
+  text-transform: uppercase;
+  line-height: 1.5;
+  font-weight: bold;
+}
+.temperature-details {
+  font-size: 30px;
+  font-weight: 300;
+  border: 3px solid var(--secondary-color);
+  padding: 0px 10px;
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 30px;
+    letter-spacing: normal;
+  }
+}
+@media screen and (max-width: 370px) {
+  h1 {
+    font-size: 20px;
+    letter-spacing: normal;
+  }
+  .location .Cloud {
+    padding: 10px;
+    margin-left: 40px;
+  }
+  .temperature-details {
+    font-size: 15px;
+  }
 }
