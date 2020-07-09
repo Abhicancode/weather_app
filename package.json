@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/Abhicancode/Weather-App/issues"
   },
-  "homepage": "https://Abhicancode.github.io/weather-app",
+  "homepage": "https://Abhicancode.github.io/weather_app",
   "dependencies": {
     "gh-pages": "^3.1.0"
   }
