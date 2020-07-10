@@ -14,26 +14,26 @@ window.addEventListener("load", () => {
     navigator.geolocation.getCurrentPosition((position) => {
       long = position.coords.longitude;
       lat = position.coords.latitude;
-      const api = `http://api.weatherstack.com/current?access_key=76c3099011c70ac0a0676083ba854b0e&query= ${lat}, ${long}`;
+      const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=6eb9a8c868f9d47961df8d6b3e67e776`;
       fetch(api)
         .then((response) => {
           return response.json();
         })
         .then((data) => {
           console.log(data);
-          const { temperature, feelslike, weather_descriptions } = data.current;
-          const { name } = data.location;
+          const { temp, feels_like } = data.main;
+          const [{ description }] = data.weather;
 
-          //Set Dom Elements from API
-          temperatureDegree.textContent = temperature;
+          // Set Dom Elements from API
+          temperatureDegree.textContent = temp;
 
-          temperatureDetails.textContent = `Oh God it feels like ${feelslike}`;
-          cloud.textContent = weather_descriptions;
+          temperatureDetails.textContent = `Oh God it feels like ${feels_like}`;
+          cloud.textContent = description;
 
-          locationTimezone.textContent = name;
+          locationTimezone.textContent = data.name;
           //FORMULA FOR CELSIUS
-          let fahrenheit = temperature * 1.8 + 32;
-          let feelsLikeFahrenheit = feelslike * 1.8 + 32;
+          let fahrenheit = temp * 1.8 + 32;
+          let feelsLikeFahrenheit = feels_like * 1.8 + 32;
 
           temperatureMain.addEventListener("click", () => {
             if (temperatureSpan.textContent === "C") {
@@ -45,8 +45,8 @@ window.addEventListener("load", () => {
               temperatureMain.style.transform = "translateX(-10%)";
             } else {
               temperatureSpan.textContent = "C";
-              temperatureDegree.textContent = temperature;
-              temperatureDetails.textContent = `Oh God it feels like ${feelslike}`;
+              temperatureDegree.textContent = temp;
+              temperatureDetails.textContent = `Oh God it feels like ${feels_like}`;
               temperatureMain.style.transform = "translateX(10%)";
             }
           });
