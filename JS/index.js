@@ -45,8 +45,10 @@ window.addEventListener("load", () => {
               temperatureMain.style.transform = "translateX(-10%)";
             } else {
               temperatureSpan.textContent = "C";
-              temperatureDegree.textContent = temp;
-              temperatureDetails.textContent = `Oh God it feels like ${feels_like}`;
+              temperatureDegree.textContent = Math.floor(temp);
+              temperatureDetails.textContent = `Oh God it feels like ${Math.floor(
+                feels_like
+              )}`;
               temperatureMain.style.transform = "translateX(10%)";
             }
           });
