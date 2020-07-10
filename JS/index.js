@@ -25,9 +25,11 @@ window.addEventListener("load", () => {
           const [{ description }] = data.weather;
 
           // Set Dom Elements from API
-          temperatureDegree.textContent = temp;
+          temperatureDegree.textContent = Math.floor(temp);
 
-          temperatureDetails.textContent = `Oh God it feels like ${feels_like}`;
+          temperatureDetails.textContent = `Oh God it feels like ${Math.floor(
+            feels_like
+          )}`;
           cloud.textContent = description;
 
           locationTimezone.textContent = data.name;
